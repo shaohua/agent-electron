@@ -1,0 +1,37 @@
+{
+  "name": "agent-electron",
+  "version": "0.1.0",
+  "description": "Electron app automation CLI for AI agents",
+  "author": "shaohua",
+  "license": "MIT",
+  "keywords": ["electron", "automation", "ai", "agent", "playwright", "cli", "accessibility"],
+  "repository": { "type": "git", "url": "https://github.com/shaohua/agent-electron.git" },
+  "homepage": "https://github.com/shaohua/agent-electron",
+  "bugs": "https://github.com/shaohua/agent-electron/issues",
+  "engines": { "node": ">=18" },
+  "type": "module",
+  "bin": {
+    "agent-electron": "./bin/agent-electron.js"
+  },
+  "files": [
+    "bin/agent-electron.js",
+    "dist/src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepack": "npm run build",
+    "dev": "tsc --watch",
+    "test": "node --experimental-vm-modules dist/test/e2e.js"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "playwright-core": "^1.49.0",
+    "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.18.1",
+    "electron": "^33.0.0",
+    "typescript": "^5.3.0"
+  }
+}
