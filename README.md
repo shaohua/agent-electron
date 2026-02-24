@@ -10,6 +10,22 @@ npm run build
 npm test  # requires Xvfb on Linux
 ```
 
+## Why not just use Playwright?
+
+Playwright is a browser testing library. agent-electron is a CLI tool that lets an AI agent drive any Electron app the same way a human would use DevTools.
+
+- **CLI-native interface** — One shell command per action, structured JSON back. No writing/executing scripts. This is how coding agents already work (they run `git`, `npm`, `curl`).
+- **See-then-act with refs** — `snapshot -i` gives a compact accessibility view with handles. The agent doesn't need CSS selectors, XPaths, or DOM structure. It reads what's on screen and acts on it by name.
+- **Electron-specific features Playwright doesn't have** — CDP target switching for webviews (VS Code extensions, etc.), main process eval, connecting to already-running apps. Built from scratch on raw WebSocket CDP.
+- **Zero setup, zero teardown** — The daemon auto-starts on first command, holds state, and cleans up on `close`. No boilerplate, no connection management, no script scaffolding.
+- **Works with pre-built apps (WIP)** — Launch VS Code, Slack, or any packaged Electron app. Playwright's `_electron` API is designed for testing your own app from source; agent-electron extends it to arbitrary installed apps.
+
+agent-electron is mostly powerful when used for both test authoring and test running.
+
+- **Test authoring**: An engineer can give some high-level direction, such as "send hello in the chat window," and the AI agent can interactively explore, interact with, and verify Electron UIs through sequential commands.
+
+- **Test running**: Once the agent has found a path to achieve the high-level goal, the engineer can codify the path by asking the agent to write the steps down in a regular test file. Then, the test can be run in the future without incurring LLM costs.
+
 ## Quick Start
 
 ```bash
