@@ -2,16 +2,29 @@
   "name": "agent-electron",
   "version": "0.1.0",
   "description": "Electron app automation CLI for AI agents",
-  "author": "shaohua",
+  "author": "howtox",
   "license": "MIT",
-  "keywords": ["electron", "automation", "ai", "agent", "playwright", "cli", "accessibility"],
-  "repository": { "type": "git", "url": "https://github.com/shaohua/agent-electron.git" },
+  "keywords": [
+    "electron",
+    "automation",
+    "ai",
+    "agent",
+    "playwright",
+    "cli",
+    "accessibility"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaohua/agent-electron.git"
+  },
   "homepage": "https://github.com/shaohua/agent-electron",
   "bugs": "https://github.com/shaohua/agent-electron/issues",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "type": "module",
   "bin": {
-    "agent-electron": "./bin/agent-electron.js"
+    "agent-electron": "bin/agent-electron.js"
   },
   "files": [
     "bin/agent-electron.js",
@@ -21,7 +34,9 @@
     "build": "tsc",
     "prepack": "npm run build",
     "dev": "tsc --watch",
-    "test": "node --experimental-vm-modules dist/test/e2e.js"
+    "test": "node --experimental-vm-modules dist/test/e2e.js",
+    "publish-dryrun": "npm pack --dry-run",
+    "publish": "npm publish"
   },
   "dependencies": {
     "commander": "^12.0.0",

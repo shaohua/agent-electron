@@ -2,14 +2,6 @@
 
 Electron app automation CLI for AI agents. Designed for the build-and-verify loop.
 
-## Development
-
-```bash
-npm install
-npm run build
-npm test  # requires Xvfb on Linux
-```
-
 ## Why not just use Playwright?
 
 Playwright is a browser testing library. agent-electron is a CLI tool that lets an AI agent drive any Electron app the same way a human would use DevTools.
@@ -292,4 +284,10 @@ Client-daemon pattern over a Unix socket:
 
 Built on [Playwright](https://playwright.dev/)'s `_electron` API. For webview iframe targets, uses raw CDP WebSocket connections.
 
+## Development
 
+```bash
+npm install
+npm run build
+npm test  # requires Xvfb on Linux
+```
